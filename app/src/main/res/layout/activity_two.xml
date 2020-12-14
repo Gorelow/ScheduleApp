@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityTwo"
+    android:padding="@dimen/box_inset_layout_padding">
+    <!--возможно следует написать com.example.firstapplication.ActivityTwo-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#AAAAAA"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonGoToMenu"
+                    android:layout_width="26dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="8sp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:background="@drawable/menu" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginRight="8sp"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-light"
+                    android:lineSpacingExtra="8sp"
+                    android:onClick="onClick"
+                    android:text="Неделя 1 - Пн"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="36sp"
+                    android:typeface="sans" />
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#393939">
+
+                    <TextView
+                        android:id="@+id/TxtWeekNumb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="#5163FF"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/TxtDay1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Пн"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/TxtDay2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Вт"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/TxtDay3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Ср"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/TxtDay4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Чт"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/TxtDay5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Пт"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/TxtDay6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Сб"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:background="@drawable/little">
+
+                    <TextView
+                        android:id="@+id/TimeStamp1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="8:00\n - \n9:35"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/Lesson1Day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson1Day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson1Day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson1Day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson1Day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson1Day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/little">
+
+                    <TextView
+                        android:id="@+id/TimeStamp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="9:50\n - \n11:25"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/Lesson2Day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson2Day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson2Day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson2Day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson2Day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson2Day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/little">
+
+                    <TextView
+                        android:id="@+id/TimeStamp3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="11:40\n - \n13:15"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/Lesson3Day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson3Day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson3Day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson3Day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson3Day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson3Day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/little">
+
+                    <TextView
+                        android:id="@+id/TimeStamp4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="14:00\n - \n15:35"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/Lesson4Day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson4Day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson4Day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson4Day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson4Day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson4Day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/little">
+
+                    <TextView
+                        android:id="@+id/TimeStamp5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="15:50\n - \n17:25"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/Lesson5Day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson5Day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson5Day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson5Day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson5Day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson5Day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/little">
+
+                    <TextView
+                        android:id="@+id/TimeStamp6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="17:40\n - \n19:15"
+                        android:textAlignment="center"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/Lesson6Day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson6Day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson6Day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson6Day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson6Day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Lesson6Day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:textAlignment="center" />
+                </TableRow>
+            </TableLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

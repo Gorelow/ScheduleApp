@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FirstApplication</string>
+    <string name="title_activity_two">ActivityTwo</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_three">ActivityThree</string>
+    <string name="teacherName">Садыков А.М</string>
+    <string name="placeName">Б231</string>
+    <string name="typeName">Лекция</string>
+    <string name="subjectName">Управление жизненным циклом ПО</string>
+    <string name="dayName">Понедельник</string>
+    <string name="startTimeName">11:40</string>
+    <string name="endTimeName">13:15</string>
+    <string name="title_activity_four">ActivityFour</string>
+    <string name="taskName">Прототипирование</string>
+    <string name="endDateName">21 окт. 2020 г.</string>
+    <string name="title_activity_five">ActivityFive</string>
+    <string name="title_activity_main2">MainActivity2</string>
+</resources>

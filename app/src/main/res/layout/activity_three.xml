@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".ActivityThree">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#AAAAAA"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.25"
+                    android:background="@drawable/abc_vector_test"
+                    android:textSize="8sp"
+                    android:onClick="onClick"
+                    tools:ignore="PrivateResource,SmallSp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Расписание"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:typeface="normal" />
+
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="#000000"
+                    android:fontFamily="sans-serif-light"
+                    android:onClick="onClick"
+                    android:text="Сохранить"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                android:background="#C6C6C6"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/inputSubject2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName"
+                        android:text="Название предмета" />
+
+                    <Button
+                        android:id="@+id/delSubject2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Тип занятия"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#090909"
+                        android:textSize="18sp"
+                        tools:ignore="NestedWeights" />
+
+                    <EditText
+                        android:id="@+id/inputType"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/delType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Place"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Кабинет"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#090909"
+                        android:textSize="18sp"
+                        tools:ignore="NestedWeights" />
+
+                    <EditText
+                        android:id="@+id/inputPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/delPlace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Teacher"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Учитель"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#090909"
+                        android:textSize="18sp"
+                        tools:ignore="NestedWeights" />
+
+                    <EditText
+                        android:id="@+id/inputTeacher"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/delTeacher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                android:background="#C6C6C6"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Day"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="День недели"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#090909"
+                        android:textSize="18sp"
+                        tools:ignore="NestedWeights" />
+
+                    <EditText
+                        android:id="@+id/inputDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/delDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/StartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Начало"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#090909"
+                        android:textSize="18sp"
+                        tools:ignore="NestedWeights" />
+
+                    <EditText
+                        android:id="@+id/inputStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/delStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/EndTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Конец"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#090909"
+                        android:textSize="18sp"
+                        tools:ignore="NestedWeights" />
+
+                    <EditText
+                        android:id="@+id/inputEndTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/delEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:onClick="onClick"
+                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:text="Удалить"
+                android:textColor="#FFFFFF"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
