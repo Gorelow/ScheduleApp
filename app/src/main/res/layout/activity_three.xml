@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="#5B000000"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".ActivityThree">
 
@@ -32,8 +32,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.25"
                     android:background="@drawable/abc_vector_test"
-                    android:textSize="8sp"
                     android:onClick="onClick"
+                    android:textSize="8sp"
                     tools:ignore="PrivateResource,SmallSp" />
 
                 <TextView
@@ -93,8 +93,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -131,8 +131,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -169,8 +169,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -207,8 +207,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -254,8 +254,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -292,8 +292,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -330,8 +330,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:onClick="onClick"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel" />
+                        android:background="@android:drawable/ic_menu_close_clear_cancel"
+                        android:onClick="onClick" />
                 </LinearLayout>
 
             </LinearLayout>

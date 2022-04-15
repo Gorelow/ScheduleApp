@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     DBHelper dbHelper = new DBHelper(this);
     EditText etName, etEmail;
+
+    ArrayList<State> states = new ArrayList<State>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         checkOnEmpty();
 
+        // начальная инициализация списка
+        setInitialData();
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        // создаем адаптер
+        StateAdapter adapter = new StateAdapter(this, states);
+        // устанавливаем для списка адаптер
+        recyclerView.setAdapter(adapter);
+
         dbHelper.close();
+    }
+
+    private void setInitialData(){
+
+        states.add(new State ("Бразилия", "Бразилиа", R.drawable.back));
+        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.back));
+        states.add(new State ("Колумбия", "Богота", R.drawable.back));
+        states.add(new State ("Уругвай", "Монтевидео", R.drawable.back));
+        states.add(new State ("Чили", "Сантьяго", R.drawable.back));
     }
 
 

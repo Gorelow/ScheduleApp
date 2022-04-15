@@ -521,7 +521,14 @@
                         android:onClick="onClick"
                         android:textAlignment="center" />
                 </TableRow>
+
             </TableLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="314dp"
+                tools:srcCompat="@tools:sample/avatars" />
 
 
         </LinearLayout>
