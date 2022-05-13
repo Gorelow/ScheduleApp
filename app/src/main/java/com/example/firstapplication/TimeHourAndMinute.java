@@ -35,6 +35,12 @@ public class TimeHourAndMinute {
     // endregion
 
     // region Basic get and set functions
+    public String get_timeInString() {
+        String output = _hour < 10 ? "0" + _hour : "" + _hour;
+        output += ":" + (_minute < 10 ? "0" + _minute : "" + _minute);
+        return output;
+    }
+
     public byte get_hour() {
         return _hour;
     }

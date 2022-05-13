@@ -66,6 +66,11 @@
             android:background="#AAAAAA"
             android:orientation="vertical">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -163,7 +168,7 @@
                         android:text="8:00\n - \n9:35"
                         android:textAlignment="center"
                         android:textColor="#000000"
-                        android:textSize="14sp"
+                        android:textSize="10sp"
                         app:autoSizeTextType="none" />
 
                     <TextView
@@ -237,6 +242,7 @@
                         android:text="9:50\n - \n11:25"
                         android:textAlignment="center"
                         android:textColor="#000000"
+                        android:textSize="10sp"
                         app:autoSizeTextType="none" />
 
                     <TextView
@@ -309,6 +315,7 @@
                         android:text="11:40\n - \n13:15"
                         android:textAlignment="center"
                         android:textColor="#000000"
+                        android:textSize="10sp"
                         app:autoSizeTextType="none" />
 
                     <TextView
@@ -381,7 +388,8 @@
                         android:gravity="center"
                         android:text="14:00\n - \n15:35"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/Lesson4Day1"
@@ -453,7 +461,7 @@
                         android:text="15:50\n - \n17:25"
                         android:textAlignment="center"
                         android:textColor="#000000"
-                        app:autoSizeTextType="uniform" />
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/Lesson5Day1"
@@ -524,7 +532,8 @@
                         android:gravity="center"
                         android:text="17:40\n - \n19:15"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/Lesson6Day1"
@@ -583,10 +592,7 @@
 
             </TableLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+
 
 
         </LinearLayout>

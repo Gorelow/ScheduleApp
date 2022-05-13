@@ -51,6 +51,8 @@ public class TimeFrame {
         return  new TimeHourAndMinute(this._end);
     }
 
+    public String get_timeInString() {return  _start.get_timeInString() + " - " + _end.get_timeInString() ;}
+
     public void set_end(TimeHourAndMinute time) {
         this._end = new TimeHourAndMinute(time);
     }
