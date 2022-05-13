@@ -1,6 +1,6 @@
-package com.example.firstapplication;
+package com.example.firstapplication.model;
 
-public class Cell {
+public class CellContent {
     private static final byte MAX_ROWS_IN_A_CELL = 3;
     private static final byte MAX_COLUMNS_IN_A_CELL = 3;
 
@@ -9,11 +9,11 @@ public class Cell {
     // String[X][Y]: X - column number, Y - row number
     private String[][] _content;
 
-    Cell(byte rows, byte columns) {
+    CellContent(byte rows, byte columns) {
         set_rowsAndColumns(rows,columns);
     }
 
-    Cell(Cell cell) {
+    CellContent(CellContent cell) {
         set_content(cell.get_content());
     }
 

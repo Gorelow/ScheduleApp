@@ -13,7 +13,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActivityTwo extends AppCompatActivity {
+import com.example.firstapplication.DB.DBHelper;
+import com.example.firstapplication.databinding.ActivityTwoBinding;
+import com.example.firstapplication.model.CellAdapter;
+
+class ActivityTwoo extends AppCompatActivity {
+
+    private ActivityTwoBinding binding;
+    private CellAdapter cellAdapter;
+
 
     TextView mTextView;
     View old;
@@ -24,6 +32,7 @@ public class ActivityTwo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //binding = ActivityTwoBinding.inflate(layoutInflater);
         setContentView(R.layout.activity_two);
 
         fill();
@@ -36,7 +45,7 @@ public class ActivityTwo extends AppCompatActivity {
 
         ContentValues contentValues = new ContentValues();
 
-        Cursor cursor = database.query(DBHelper.TABLE_SCHEDULE,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_SCHEDULE,null,null,null,null, null,null);
         if (cursor.moveToFirst()) {
             int idIndex = cursor.getColumnIndex(DBHelper.KEY_DAY);
             int startIndex = cursor.getColumnIndex(DBHelper.KEY_LESSON_TIME);

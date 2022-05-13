@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.firstapplication.DB.DBHelper;
 
 import java.util.ArrayList;
 
@@ -42,11 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // начальная инициализация списка
         setInitialData();
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
         // создаем адаптер
         StateAdapter adapter = new StateAdapter(this, states);
         // устанавливаем для списка адаптер
-        recyclerView.setAdapter(adapter);
 
         dbHelper.close();
     }
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ContentValues contentValues = new ContentValues();
 
-        Cursor cursor = database.query(DBHelper.TABLE_TIMESTAMPS,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_TIMESTAMPS,null,null,null,null, null,null);
         if (!cursor.moveToFirst()){
             int startH = 8;
             int startM = 0;
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 contentValues.put(DBHelper.KEY_END, startH + ":" + (startM<10 ? startM + "0" : startM));
 
-                database.insert(DBHelper.TABLE_TIMESTAMPS, null, contentValues);
+                database.insert(DBHelper.NAME_TABLE_TIMESTAMPS, null, contentValues);
 
                 contentValues.clear();
 

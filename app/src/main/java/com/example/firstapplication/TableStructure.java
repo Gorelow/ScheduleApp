@@ -1,5 +1,7 @@
 package com.example.firstapplication;
 
+import com.example.firstapplication.model.CellContent;
+
 public class TableStructure {
     private static final byte DAYS_IN_ONE_WEEK = 7;
     private static final byte MAX_WEEKS_IN_SCHEDULE_AMOUNT = 4;
@@ -7,7 +9,7 @@ public class TableStructure {
     private byte _weeks;
     private Day[] _days;
     private TimeFrame[] _timeFrames;
-    private Cell[][] _cells;
+    private CellContent[][] _cells;
 
     public TableStructure() {
         copy(new TableStructure((byte) 1));
@@ -18,8 +20,7 @@ public class TableStructure {
     }
 
     public TableStructure(byte weeks, Day[] days) {
-        copy(new TableStructure(weeks, days, new TimeFrame[] {new TimeFrame(510, 555), new TimeFrame(570, 615), new TimeFrame(630, 675),
-                                                                new TimeFrame(685, 760), new TimeFrame(750, 795), new TimeFrame(815,860), new TimeFrame(870, 915)}));
+        copy(new TableStructure(weeks, days, TimeFrame.BASE_TIMEFRAMES));
     }
 
     public TableStructure(byte weeks, Day[] days, TimeFrame[] timeFrames)

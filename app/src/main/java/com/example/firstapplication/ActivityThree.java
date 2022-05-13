@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firstapplication.DB.DBHelper;
+
 public class ActivityThree extends AppCompatActivity {
 
     private TextView mTextView;
@@ -45,7 +47,7 @@ public class ActivityThree extends AppCompatActivity {
     public void loadTimeStamp(){
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        Cursor cursor = database.query(DBHelper.TABLE_TIMESTAMPS,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_TIMESTAMPS,null,null,null,null, null,null);
         if (cursor.move(timeStampId+1)) {
             int startIndex = cursor.getColumnIndex(DBHelper.KEY_START);
             int endIndex = cursor.getColumnIndex(DBHelper.KEY_END);
@@ -71,7 +73,7 @@ public class ActivityThree extends AppCompatActivity {
     public void checkInDB(){
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        Cursor cursor = database.query(DBHelper.TABLE_SCHEDULE,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_SCHEDULE,null,null,null,null, null,null);
         if (cursor.moveToFirst()) {
             int oneIndex = cursor.getColumnIndex(DBHelper.KEY_SUBJECT);
             int twoIndex = cursor.getColumnIndex(DBHelper.KEY_TYPE);
@@ -153,7 +155,7 @@ public class ActivityThree extends AppCompatActivity {
 
                     String type = etType.getText().toString();
                     contentValues.put(DBHelper.KEY_VALUE, type);
-                    database.insert(DBHelper.TABLE_TYPES, null, contentValues);
+                    database.insert(DBHelper.NAME_TABLE_TYPES, null, contentValues);
                     contentValues.clear();
 
                     String place = etPlace.getText().toString();
@@ -177,8 +179,8 @@ public class ActivityThree extends AppCompatActivity {
                     contentValues1.put(DBHelper.KEY_DAY, day);
                     contentValues1.put(DBHelper.KEY_LESSON_TIME, timeStampId);
 
-                    if (updateData)  database.update(DBHelper.TABLE_SCHEDULE, contentValues1, DBHelper.KEY_LESSON_TIME + "= "+timeStampId + " AND " + DBHelper.KEY_DAY +"= " + day, null);
-                    else  database.insert(DBHelper.TABLE_SCHEDULE, null, contentValues1);
+                    if (updateData)  database.update(DBHelper.NAME_TABLE_SCHEDULE, contentValues1, DBHelper.KEY_LESSON_TIME + "= "+timeStampId + " AND " + DBHelper.KEY_DAY +"= " + day, null);
+                    else  database.insert(DBHelper.NAME_TABLE_SCHEDULE, null, contentValues1);
 
                 dbHelper.close();
                 intent = new Intent(this,ActivityTwo.class);
@@ -215,7 +217,7 @@ public class ActivityThree extends AppCompatActivity {
                 break;
             case R.id.button3:
                 SQLiteDatabase database = dbHelper.getWritableDatabase();
-                database.delete(DBHelper.TABLE_SCHEDULE, DBHelper.KEY_LESSON_TIME + "= "+timeStampId + " AND " + DBHelper.KEY_DAY +"= " + chosenDay, null);
+                database.delete(DBHelper.NAME_TABLE_SCHEDULE, DBHelper.KEY_LESSON_TIME + "= "+timeStampId + " AND " + DBHelper.KEY_DAY +"= " + chosenDay, null);
                 dbHelper.close();
                 intent = new Intent(this,ActivityFour.class);
                 startActivity(intent);

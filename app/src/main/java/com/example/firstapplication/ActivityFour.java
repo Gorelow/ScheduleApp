@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firstapplication.DB.DBHelper;
+
 public class ActivityFour extends AppCompatActivity {
 
     private TextView mTextView;
@@ -34,7 +36,7 @@ public class ActivityFour extends AppCompatActivity {
 
         ContentValues contentValues = new ContentValues();
 
-        Cursor cursor = database.query(DBHelper.TABLE_TASKS,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS,null,null,null,null, null,null);
         if (cursor.moveToFirst()) {
             int taskIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
             int deadlineIndex = cursor.getColumnIndex(DBHelper.KEY_DEADLINE);
@@ -76,7 +78,7 @@ public class ActivityFour extends AppCompatActivity {
 
                 ContentValues contentValues = new ContentValues();
 
-                Cursor cursor = database.query(DBHelper.TABLE_TASKS,null,null,null,null, null,null);
+                Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS,null,null,null,null, null,null);
                 if (cursor.move(ActivityFive.num)) {
                     intent = new Intent(this,ActivityFive.class);
                     startActivity(intent);

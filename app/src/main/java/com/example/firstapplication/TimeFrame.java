@@ -3,6 +3,16 @@ package com.example.firstapplication;
 /**Временной промежуток*/
 public class TimeFrame {
 
+    public static TimeFrame[] BASE_TIMEFRAMES = new TimeFrame[] {
+            new TimeFrame(510, 555),
+            new TimeFrame(570, 615),
+            new TimeFrame(630, 675),
+            new TimeFrame(685, 760),
+            new TimeFrame(750, 795),
+            new TimeFrame(815, 860),
+            new TimeFrame(870, 915)
+    };
+
     private TimeHourAndMinute _start;
     private TimeHourAndMinute _end;
 

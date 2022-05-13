@@ -19,4 +19,10 @@
     <string name="endDateName">21 окт. 2020 г.</string>
     <string name="title_activity_five">ActivityFive</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="SaveString">Сохранить</string>
+    <string name="ScheduleString">Расписание</string>
+    <string name="StringDelete">Удалить</string>
+    <string name="StringEnd">Конец</string>
+    <string name="StringTeacher">Учитель</string>
+    <string name="Content">hi there</string>
 </resources>

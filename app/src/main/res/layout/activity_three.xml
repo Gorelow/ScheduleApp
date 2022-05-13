@@ -9,9 +9,13 @@
     tools:context=".ActivityThree">
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding">
+        android:layout_height="600dp"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTop">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,45 +27,227 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#000000"
-                android:orientation="horizontal">
+                android:layout_marginTop="25sp"
+                android:background="#C6C6C6"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/buttonBack"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.25"
-                    android:background="@drawable/abc_vector_test"
-                    android:onClick="onClick"
-                    android:textSize="8sp"
-                    tools:ignore="PrivateResource,SmallSp" />
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
 
-                <TextView
-                    android:id="@+id/textView2"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights">
+
+                        <EditText
+                            android:id="@+id/inputSubject2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            android:text="Название предмета"
+                            app:layout_constraintEnd_toStartOf="@+id/delSubject2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/delSubject2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="w,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.7"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Расписание"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:typeface="normal" />
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/buttonSave"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        tools:ignore="NestedWeights">
+
+                        <TextView
+                            android:id="@+id/Type"
+                            android:layout_width="@dimen/StandardTextViewSize"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="Тип занятия"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#090909"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="NestedWeights" />
+
+                        <EditText
+                            android:id="@+id/inputType"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/delType"
+                            app:layout_constraintStart_toEndOf="@+id/Type"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/delType"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="w,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.9"
-                    android:background="#000000"
-                    android:fontFamily="sans-serif-light"
-                    android:onClick="onClick"
-                    android:text="Сохранить"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        tools:ignore="NestedWeights">
+
+                        <TextView
+                            android:id="@+id/Place"
+                            android:layout_width="@dimen/StandardTextViewSize"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="Кабинет"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#090909"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="NestedWeights" />
+
+                        <EditText
+                            android:id="@+id/inputPlace"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/delPlace"
+                            app:layout_constraintStart_toEndOf="@+id/Place"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/delPlace"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="w,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        tools:ignore="NestedWeights">
+
+                        <EditText
+                            android:id="@+id/inputTeacher"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/delTeacher"
+                            app:layout_constraintStart_toEndOf="@+id/Teacher"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/delTeacher"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="w,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/Teacher"
+                            android:layout_width="@dimen/StandardTextViewSize"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="@string/StringTeacher"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#090909"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="NestedWeights" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -76,276 +262,337 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="10"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
 
-                    <EditText
-                        android:id="@+id/inputSubject2"
-                        android:layout_width="match_parent"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName"
-                        android:text="Название предмета" />
+                        android:layout_weight="4"
+                        tools:ignore="NestedWeights">
 
-                    <Button
-                        android:id="@+id/delSubject2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
+                        <EditText
+                            android:id="@+id/inputDay"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            app:layout_constraintEnd_toStartOf="@+id/delDay"
+                            app:layout_constraintStart_toEndOf="@+id/Day" />
+
+                        <TextView
+                            android:id="@+id/Day"
+                            android:layout_width="@dimen/StandardTextViewSize"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="День недели"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#090909"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="NestedWeights" />
+
+                        <Button
+                            android:id="@+id/delDay"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="w,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="10"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
 
-                    <TextView
-                        android:id="@+id/Type"
-                        android:layout_width="match_parent"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="4"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Тип занятия"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#090909"
-                        android:textSize="18sp"
-                        tools:ignore="NestedWeights" />
+                        tools:ignore="NestedWeights">
 
-                    <EditText
-                        android:id="@+id/inputType"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName" />
+                        <EditText
+                            android:id="@+id/inputStartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/delStartTime"
+                            app:layout_constraintStart_toEndOf="@+id/StartTime" />
 
-                    <Button
-                        android:id="@+id/delType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
+                        <TextView
+                            android:id="@+id/StartTime"
+                            android:layout_width="@dimen/StandardTextViewSize"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="Начало"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#090909"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="NestedWeights" />
+
+                        <Button
+                            android:id="@+id/delStartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="10"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
 
-                    <TextView
-                        android:id="@+id/Place"
-                        android:layout_width="match_parent"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="4"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Кабинет"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#090909"
-                        android:textSize="18sp"
-                        tools:ignore="NestedWeights" />
+                        tools:ignore="NestedWeights">
 
-                    <EditText
-                        android:id="@+id/inputPlace"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName" />
+                        <EditText
+                            android:id="@+id/inputEndTime"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:ems="10"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPersonName"
+                            app:layout_constraintEnd_toStartOf="@+id/delEndTime"
+                            app:layout_constraintStart_toEndOf="@+id/EndTime" />
 
-                    <Button
-                        android:id="@+id/delPlace"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
-                </LinearLayout>
+                        <Button
+                            android:id="@+id/delEndTime"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:background="@android:drawable/ic_menu_close_clear_cancel"
+                            android:onClick="onClick"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="w,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"
-                    android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/EndTime"
+                            android:layout_width="@dimen/StandardTextViewSize"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="@string/StringEnd"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#090909"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="NestedWeights" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/Teacher"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Учитель"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#090909"
-                        android:textSize="18sp"
-                        tools:ignore="NestedWeights" />
-
-                    <EditText
-                        android:id="@+id/inputTeacher"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName" />
-
-                    <Button
-                        android:id="@+id/delTeacher"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Colors"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25sp"
-                android:background="#C6C6C6"
-                android:orientation="vertical">
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"
-                    android:orientation="horizontal">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#009688"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:id="@+id/Day"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:fontFamily="sans-serif-light"
-                        android:text="День недели"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#090909"
-                        android:textSize="18sp"
-                        tools:ignore="NestedWeights" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#4CAF50"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton3"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
-                        android:id="@+id/inputDay"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#8BC34A"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton4"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-                    <Button
-                        android:id="@+id/delDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
-                </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#CDDC39"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"
-                    android:orientation="horizontal">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#FFEB3B"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton6"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:id="@+id/StartTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Начало"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#090909"
-                        android:textSize="18sp"
-                        tools:ignore="NestedWeights" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton6"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#FFC107"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton7"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-                    <EditText
-                        android:id="@+id/inputStartTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName" />
-
-                    <Button
-                        android:id="@+id/delStartTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/EndTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Конец"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#090909"
-                        android:textSize="18sp"
-                        tools:ignore="NestedWeights" />
-
-                    <EditText
-                        android:id="@+id/inputEndTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPersonName" />
-
-                    <Button
-                        android:id="@+id/delEndTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:background="@android:drawable/ic_menu_close_clear_cancel"
-                        android:onClick="onClick" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#000000"
-                android:text="Удалить"
-                android:textColor="#FFFFFF"
-                android:visibility="invisible" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton7"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:backgroundTint="#FF9800"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
     </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/abc_vector_test"
+            android:onClick="onClick"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/ScheduleString"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+            app:layout_constraintStart_toEndOf="@+id/buttonBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:background="#000000"
+            android:fontFamily="sans-serif-light"
+            android:onClick="onClick"
+            android:text="@string/SaveString"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="#000000"
+        android:text="@string/StringDelete"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

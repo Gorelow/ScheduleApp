@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firstapplication.DB.DBHelper;
+
 public class ActivityFive extends AppCompatActivity {
 
     private TextView mTextView;
@@ -41,7 +43,7 @@ public class ActivityFive extends AppCompatActivity {
     {
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        Cursor cursor = database.query(DBHelper.TABLE_TASKS,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS,null,null,null,null, null,null);
         if (cursor.move(num)) {
             int taskIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
             int deadlineIndex = cursor.getColumnIndex(DBHelper.KEY_DEADLINE);
@@ -92,8 +94,8 @@ public class ActivityFive extends AppCompatActivity {
                 contentValues1.put(DBHelper.KEY_NAME, name);
                 contentValues1.put(DBHelper.KEY_DEADLINE, deadline);
 
-                if (updateData)  database.delete(DBHelper.TABLE_TASKS, DBHelper.KEY_NAME + "= '"+ firstName + "'", null);
-                database.insert(DBHelper.TABLE_TASKS, null, contentValues1);
+                if (updateData)  database.delete(DBHelper.NAME_TABLE_TASKS, DBHelper.KEY_NAME + "= '"+ firstName + "'", null);
+                database.insert(DBHelper.NAME_TABLE_TASKS, null, contentValues1);
 
                 dbHelper.close();
                 intent = new Intent(this,ActivityFour.class);
@@ -117,7 +119,7 @@ public class ActivityFive extends AppCompatActivity {
                 break;
             case R.id.button:
                 database = dbHelper.getWritableDatabase();
-                database.delete(DBHelper.TABLE_TASKS, DBHelper.KEY_NAME + "= ?", new String[] {firstName});
+                database.delete(DBHelper.NAME_TABLE_TASKS, DBHelper.KEY_NAME + "= ?", new String[] {firstName});
                 dbHelper.close();
                 intent = new Intent(this,ActivityFour.class);
                 startActivity(intent);
