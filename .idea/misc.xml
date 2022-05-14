@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_five.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_five.xml" value="0.25" />
+        <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_four.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_two.xml" value="0.33" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/cell.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_cell.xml" value="0.2717391304347826" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/list_item.xml" value="0.2667572463768116" />
+        <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/menu/popup_menu.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_clear"
+        android:icon="@drawable/ic_baseline_delete_outline_24"
+        android:title="Delete"/>
+    <item
+        android:id="@+id/nav_edit"
+        android:icon="@drawable/ic_baseline_change_24"
+        android:title="Edit"/>
+    <item
+        android:id="@+id/nav_replace_with_new"
+        android:icon="@drawable/ic_baseline_content_replace_with_new_24"
+        android:title="New"/>
+
+
+</menu>

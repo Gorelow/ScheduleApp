@@ -1,5 +1,6 @@
 package com.example.firstapplication;
 
+
 /**День недели*/
 public enum Day {
     /**Понедельник*/

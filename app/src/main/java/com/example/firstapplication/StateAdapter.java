@@ -19,6 +19,8 @@ public class StateAdapter  extends RecyclerView.Adapter<StateAdapter.ViewHolder>
         this.states = states;
         this.inflater = LayoutInflater.from(context);
     }
+
+
     @Override
     public StateAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -38,6 +40,7 @@ public class StateAdapter  extends RecyclerView.Adapter<StateAdapter.ViewHolder>
     public int getItemCount() {
         return states.size();
     }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         //final ImageView flagView;
