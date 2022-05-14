@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,15 +29,14 @@ public class ActivityFour extends AppCompatActivity {
         fill();
     }
 
-    public void fill()
-    {
+    public void fill() {
         int num = R.id.textTaskName1; // 42, 34
         int i = 0;
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
 
-        Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS,null,null,null,null, null,null);
+        Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS, null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             int taskIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
             int deadlineIndex = cursor.getColumnIndex(DBHelper.KEY_DEADLINE);
@@ -49,10 +49,9 @@ public class ActivityFour extends AppCompatActivity {
                 mTextView = (TextView) findViewById(num - 16 + i);
                 mTextView.setText(cursor.getString(deadlineIndex));
                 i++;
-                Log.d("mLog","" + cursor.getString(subjectIndex));
+                Log.d("mLog", "" + cursor.getString(subjectIndex));
             } while (cursor.moveToNext());
-        }
-        else Log.d("mLog", "0 rows");
+        } else Log.d("mLog", "0 rows");
 
         cursor.close();
 
@@ -62,15 +61,19 @@ public class ActivityFour extends AppCompatActivity {
     public void onClick(View v) {
         int num = R.id.textTaskName1;
         Intent intent;
-        switch (v.getId())   {
+        switch (v.getId()) {
             case R.id.buttonGoToMenu:
-                intent = new Intent(this,MainActivity.class);
+                intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.buttonNewTask:
-                ActivityFive.num = -1;
-                intent = new Intent(this,ActivityFive.class);
-                startActivity(intent);
+                try {
+                    ActivityFive.num = -1;
+                    intent = new Intent(this, ActivityFive.class);
+                    startActivity(intent);
+                } catch(Exception e) {
+                    Toast.makeText(this, "Seems to some kind of error", Toast.LENGTH_SHORT).show();
+                }
                 break;
             default:
                 ActivityFive.num = v.getId() - num + 1;
@@ -78,12 +81,11 @@ public class ActivityFour extends AppCompatActivity {
 
                 ContentValues contentValues = new ContentValues();
 
-                Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS,null,null,null,null, null,null);
+                Cursor cursor = database.query(DBHelper.NAME_TABLE_TASKS, null, null, null, null, null, null);
                 if (cursor.move(ActivityFive.num)) {
-                    intent = new Intent(this,ActivityFive.class);
+                    intent = new Intent(this, ActivityFive.class);
                     startActivity(intent);
-                }
-                else Log.d("mLog", "0 rows");
+                } else Log.d("mLog", "0 rows");
 
                 cursor.close();
 

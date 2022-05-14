@@ -19,11 +19,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityFive"
-            android:label="@string/title_activity_five">
+            android:name=".ActivityFour">
         </activity>
         <activity
-            android:name=".ActivityFour">
+            android:name=".ActivityFive" >
         </activity>
         <activity
             android:name=".ActivityThree"
