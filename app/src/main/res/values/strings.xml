@@ -25,4 +25,9 @@
     <string name="StringEnd">Конец</string>
     <string name="StringTeacher">Учитель</string>
     <string name="Content">hi there</string>
+    <string name="move_up">Move up</string>
+    <string name="move_down">Move down</string>
+    <string name="remove">Remove</string>
+    <string name="Edit" />
+    <string name="edit">Edit</string>
 </resources>

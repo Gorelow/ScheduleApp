@@ -1,6 +1,7 @@
 package com.example.firstapplication.DB;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -129,4 +130,15 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public Cursor readAllData(String dataTableName) {
+        String query = "SELECT * FROM " + dataTableName;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null)
+        {
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
+    }
 }

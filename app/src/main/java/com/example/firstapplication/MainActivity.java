@@ -10,12 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firstapplication.DB.DBHelper;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     DBHelper dbHelper = new DBHelper(this);
     EditText etName, etEmail;
 
-    ArrayList<State> states = new ArrayList<State>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         checkOnEmpty();
 
-        // начальная инициализация списка
-        setInitialData();
-        // создаем адаптер
-        StateAdapter adapter = new StateAdapter(this, states);
-        // устанавливаем для списка адаптер
+
 
         dbHelper.close();
     }
 
-    private void setInitialData(){
 
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.back));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.back));
-        states.add(new State ("Колумбия", "Богота", R.drawable.back));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.back));
-        states.add(new State ("Чили", "Сантьяго", R.drawable.back));
-    }
 
 
     public void checkOnEmpty() {
@@ -130,8 +118,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button2:
-                intent = new Intent(this,ActivityFour.class);
-                startActivity(intent);
+                try {
+                    intent = new Intent(this, ActivityFour.class);
+                    startActivity(intent);
+                }
+                catch (Exception e) {
+                    Toast.makeText(this, "start doesn't work", Toast.LENGTH_SHORT).show();
+                }
                 break;
             default:
                 break;
