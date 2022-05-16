@@ -25,6 +25,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/menu"
+            android:onClick="onClick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,78 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#171717"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/TxtDay1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:text="Пн"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/TxtDay2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:text="Вт"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/TxtDay3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:text="Ср"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/TxtDay4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:text="Чт"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/TxtDay5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:text="Пт"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/TxtDay6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:text="Сб"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <!--
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,75 +147,71 @@
                     android:layout_height="match_parent"
                     android:background="#393939">
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/little">
+
                     <TextView
-                        android:id="@+id/TxtWeekNumb"
+                        android:id="@+id/TimeStamp6"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="0.4"
                         android:fontFamily="sans-serif-light"
-                        android:text="1"
+                        android:gravity="center"
+                        android:text="17:40\n - \n19:15"
                         android:textAlignment="center"
-                        android:textColor="#5163FF"
-                        app:autoSizeTextType="uniform" />
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
 
                     <TextView
-                        android:id="@+id/TxtDay1"
+                        android:id="@+id/Lesson6Day1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Пн"
-                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
                         app:autoSizeTextType="uniform" />
 
                     <TextView
-                        android:id="@+id/TxtDay2"
+                        android:id="@+id/Lesson6Day2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Вт"
-                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
                         app:autoSizeTextType="uniform" />
 
                     <TextView
-                        android:id="@+id/TxtDay3"
+                        android:id="@+id/Lesson6Day3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Ср"
-                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
                         app:autoSizeTextType="uniform" />
 
                     <TextView
-                        android:id="@+id/TxtDay4"
+                        android:id="@+id/Lesson6Day4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Чт"
-                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
                         app:autoSizeTextType="uniform" />
 
                     <TextView
-                        android:id="@+id/TxtDay5"
+                        android:id="@+id/Lesson6Day5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Пт"
-                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
                         app:autoSizeTextType="uniform" />
 
                     <TextView
-                        android:id="@+id/TxtDay6"
+                        android:id="@+id/Lesson6Day6"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Сб"
-                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
                         app:autoSizeTextType="uniform" />
 
                 </TableRow>
@@ -482,82 +551,21 @@
                         app:autoSizeTextType="uniform" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/little">
-
-                    <TextView
-                        android:id="@+id/TimeStamp6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.4"
-                        android:fontFamily="sans-serif-light"
-                        android:gravity="center"
-                        android:text="17:40\n - \n19:15"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/Lesson6Day1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        app:autoSizeTextType="uniform" />
-
-                    <TextView
-                        android:id="@+id/Lesson6Day2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        app:autoSizeTextType="uniform" />
-
-                    <TextView
-                        android:id="@+id/Lesson6Day3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        app:autoSizeTextType="uniform" />
-
-                    <TextView
-                        android:id="@+id/Lesson6Day4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        app:autoSizeTextType="uniform" />
-
-                    <TextView
-                        android:id="@+id/Lesson6Day5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        app:autoSizeTextType="uniform" />
-
-                    <TextView
-                        android:id="@+id/Lesson6Day6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        app:autoSizeTextType="uniform" />
-                </TableRow>
-
             </TableLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/recyclerView" />
-
-
         </LinearLayout>
+    </FrameLayout>-->
 
-    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

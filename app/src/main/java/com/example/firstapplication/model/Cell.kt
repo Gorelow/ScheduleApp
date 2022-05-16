@@ -7,6 +7,6 @@ import com.example.firstapplication.TimeFrame
 data class Cell (
     val id: Long,
     val day: Day,
-    val timeFrame: TimeFrame,
+    val timeFrame: Int,
     val content: CellContent
 )

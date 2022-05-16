@@ -9,11 +9,11 @@ public class CellContent {
     // String[X][Y]: X - column number, Y - row number
     private String[][] _content;
 
-    CellContent(byte rows, byte columns) {
+    public CellContent(byte rows, byte columns) {
         set_rowsAndColumns(rows,columns);
     }
 
-    CellContent(CellContent cell) {
+    public CellContent(CellContent cell) {
         set_content(cell.get_content());
     }
 

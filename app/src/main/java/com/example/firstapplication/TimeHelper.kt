@@ -7,7 +7,12 @@ public class TimeHelper {
 
 
     fun CalculateDay(date : Date) : Day {
-        return Day.values()[date.day]
+        var day = try {
+            Day.values()[date.day-1]
+        } catch (e : Exception) {
+            Day.Monday
+        }
+        return day
     }
 
     fun CalculateDay(day : Int, month : Int, year : Int) : Day {
