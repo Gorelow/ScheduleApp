@@ -107,7 +107,17 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
         savedHour = hourOfDay
         savedMinute = minute
 
-        etDeadline.text = "$day.$month.$year    $hourOfDay:$minute"
+        var output : String = ""
+        if (day<10) output +="0"
+        output += "$day."
+        if (month<10) output +="0"
+        output += "$month.$year     "
+        if (hourOfDay < 10) output+="0"
+        output += "$hourOfDay:"
+        if (minute < 10) output+="0"
+        output += "$minute"
+
+        etDeadline.text = output
     }
 
     fun fill() {
@@ -165,21 +175,9 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
                 intent = Intent(this, ActivityFour::class.java)
                 startActivity(intent)
             }
-            R.id.delTask -> {
-                mTextView = findViewById<View>(R.id.inputTask) as TextView
-                mTextView!!.text = ""
-            }
-            R.id.delSubject -> {
-                mTextView = findViewById<View>(R.id.inputSubject) as TextView
-                mTextView!!.text = ""
-            }
-            R.id.delDate -> {
-                mTextView = findViewById<View>(R.id.inputDate) as TextView
-                mTextView!!.text = ""
-            }
-            R.id.delNotify -> {
-                mTextView = findViewById<View>(R.id.TextReminder) as TextView
-                mTextView!!.text = ""
+            R.id.delTask, R.id.delSubject -> {
+                mTextView = v as TextView
+                mTextView.text = ""
             }
             R.id.button -> {
                 database.delete(

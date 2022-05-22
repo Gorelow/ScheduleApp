@@ -41,11 +41,29 @@ class ActivityTwo : AppCompatActivity() {
             }
 
             override fun OnCellClear(cell: Cell) {
-                Toast.makeText(this@ActivityTwo, "${cell.id}", Toast.LENGTH_SHORT).show()
+                val database = dbHelper.writableDatabase
+                database.delete(
+                    DBHelper.NAME_TABLE_SCHEDULE,
+                    DBHelper.KEY_LESSON_TIME + "= " + ActivityThree.timeStampPiked + " AND " + DBHelper.KEY_DAY + "= '" + ActivityThree.chosenDay + "'",
+                    null
+                )
+                dbHelper.close()
+                cellsService.clearCell(cell.day, cell.timeFrame)
+
+                Toast.makeText(this@ActivityTwo, "Cell is cleared!", Toast.LENGTH_SHORT).show()
             }
 
             override fun OnCellReplaceWithNew(cell: Cell) {
-                TODO("Not yet implemented")
+                val database = dbHelper.writableDatabase
+                database.delete(
+                    DBHelper.NAME_TABLE_SCHEDULE,
+                    DBHelper.KEY_LESSON_TIME + "= " + ActivityThree.timeStampPiked + " AND " + DBHelper.KEY_DAY + "= '" + ActivityThree.chosenDay + "'",
+                    null
+                )
+                dbHelper.close()
+                cellsService.clearCell(cell.day, cell.timeFrame)
+
+                load(cell)
             }
         })
 
@@ -159,11 +177,13 @@ class ActivityTwo : AppCompatActivity() {
         //Toast.makeText(this@ActivityTwo, "${cursor.count} inputs form database", Toast.LENGTH_SHORT).show()
         if (cursor.moveToFirst()) {
             try {
-            columnIndex = cursor.getColumnIndex(DBHelper.KEY_DAY)
-            rowIndex = cursor.getColumnIndex(DBHelper.KEY_LESSON_TIME)
-            val subjectIndex: Int = cursor.getColumnIndex(DBHelper.KEY_SUBJECT) // предмет
-            val typeIndex: Int = cursor.getColumnIndex(DBHelper.KEY_TYPE) // тип занятия
-            val placeIndex: Int = cursor.getColumnIndex(DBHelper.KEY_PLACE) // кабинет
+                columnIndex = cursor.getColumnIndex(DBHelper.KEY_DAY)
+                rowIndex = cursor.getColumnIndex(DBHelper.KEY_LESSON_TIME)
+                val subjectIndex: Int = cursor.getColumnIndex(DBHelper.KEY_SUBJECT) // предмет
+                val typeIndex: Int = cursor.getColumnIndex(DBHelper.KEY_TYPE) // тип занятия
+                val placeIndex: Int = cursor.getColumnIndex(DBHelper.KEY_PLACE) // кабинет
+                val colour: Int = cursor.getColumnIndex(DBHelper.KEY_COLOR) // выбранный цвет
+                val notification: Int = cursor.getColumnIndex(DBHelper.KEY_NOTIFICATION)
             do {
                 val content = CellContent(3,1)
                 content.set_content(0,0, cursor.getString(subjectIndex))
@@ -172,12 +192,16 @@ class ActivityTwo : AppCompatActivity() {
                 val columnValue = cursor.getString(columnIndex)
                 val rowValue = cursor.getInt(rowIndex)
                 val dayNumber = Day.values().indexOfFirst { it.toString() == columnValue }
+                val colourValue = cursor.getInt(colour)
+                val notificationValue = cursor.getInt(notification)
                 //Toast.makeText(this@ActivityTwo, "column $dayNumber, row $columnValue", Toast.LENGTH_SHORT).show()
                 val cell = Cell(
                     id = (rowValue * 6 + dayNumber).toLong(),
                     day = Day.values()[dayNumber],
                     timeFrame = rowIndex,
-                    content = content
+                    content = content,
+                    colour = colourValue,
+                    notification = notificationValue == 1
                 )
                 try {
                     cellsService.changeCell(cell.id.toInt(), cell)

@@ -1,5 +1,6 @@
 package com.example.firstapplication.model
 
+import android.graphics.Color
 import com.example.firstapplication.Day
 import com.example.firstapplication.TimeFrame
 import java.util.*
@@ -25,7 +26,9 @@ class CellsService {
                 else ->  Day.Sunday
             },
             timeFrame = it / 6,
-            content = CellContent(3, 1)
+            content = CellContent(3, 1),
+            colour = Color.WHITE,
+            notification = false
         ) }.toMutableList()
     }
 
@@ -54,6 +57,12 @@ class CellsService {
     fun changeCell(index: Int, newCell: Cell) {
         val indexToChange = cells.indexOfFirst { it.id == newCell.id }
         cells[indexToChange].content._content = newCell.content._content
+        notifyChanges()
+    }
+
+    fun clearCell(day: Day , timeFrame : Int) {
+        val indexToClear = cells.indexOfFirst { it.day == day && it.timeFrame == timeFrame }
+        cells[indexToClear].content._content = CellContent(3,1)._content
         notifyChanges()
     }
 

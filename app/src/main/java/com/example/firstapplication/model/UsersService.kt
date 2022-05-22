@@ -1,12 +1,6 @@
 package com.example.firstapplication.model
 
-import android.content.ContentValues
-import android.content.Context
-import android.util.Log
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
-import com.example.firstapplication.ActivityFour
+import android.graphics.Color
 import com.example.firstapplication.DB.DBHelper
 import com.example.firstapplication.App
 import com.example.firstapplication.MainActivity
@@ -25,7 +19,9 @@ class UsersService {
             id = it.toLong(),
             subject = " ",
             deadline = " ",
-            task = " "
+            task = " ",
+            colour = Color.WHITE,
+            notification = false
         )  }.toMutableList()
     }
 
@@ -34,7 +30,9 @@ class UsersService {
             id = it.toLong(),
             subject = newUsers[it-1].subject,
             deadline = newUsers[it-1].deadline,
-            task = newUsers[it-1].task
+            task = newUsers[it-1].task,
+            colour = newUsers[it-1].colour,
+            notification = newUsers[it-1].notification
         )  }.toMutableList()
         notifyChanges()
     }

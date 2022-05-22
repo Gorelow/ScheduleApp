@@ -120,12 +120,16 @@ class ActivityFour : AppCompatActivity() {
             val taskIndex = cursor.getColumnIndex(DBHelper.KEY_NAME)
             val deadlineIndex = cursor.getColumnIndex(DBHelper.KEY_DEADLINE)
             val subjectIndex = cursor.getColumnIndex(DBHelper.KEY_SUBJECT)
+            val colour: Int = cursor.getColumnIndex(DBHelper.KEY_COLOR) // выбранный цвет
+            val notification: Int = cursor.getColumnIndex(DBHelper.KEY_NOTIFICATION)
             do {
                 users.add(User(
                     id = i.toLong(),
                     task =  cursor.getString(taskIndex),
                     subject = cursor.getString(subjectIndex),
-                    deadline = cursor.getString(deadlineIndex)
+                    deadline = cursor.getString(deadlineIndex),
+                    colour = cursor.getInt(colour),
+                    notification = cursor.getInt(notification) == 1
                 ))
                 i++
                 Log.d("mLog", "" + cursor.getString(subjectIndex))

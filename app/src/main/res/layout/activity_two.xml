@@ -39,14 +39,32 @@
             android:layout_weight="5"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:text="Неделя 1 - Пон."
+            android:text="Понедельник"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#FFFFFF"
             android:typeface="sans"
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/week_number"
             app:layout_constraintStart_toEndOf="@+id/buttonGoToMenu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/week_number"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:lines="1"
+            android:text="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#2D45E1"
+            android:typeface="sans"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

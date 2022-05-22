@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstapplication.databinding.ItemUserBinding
 import com.example.firstapplication.model.User
@@ -33,7 +34,7 @@ class UsersAdapter(
     override fun onClick(v: View) {
         val user = v.tag as User
         when (v.id) {
-            R.id.imageView -> {
+            R.id.notificationView -> {
                 showPopupMenu(v)
             }
             else -> {
@@ -49,7 +50,7 @@ class UsersAdapter(
         val binding = ItemUserBinding.inflate(inflater, parent, false)
 
         binding.root.setOnClickListener(this)
-        binding.imageView.setOnClickListener(this)
+        binding.notificationView.setOnClickListener(this)
 
         return UsersViewHolder(binding)
     }
@@ -58,11 +59,13 @@ class UsersAdapter(
         val user = users[position]
         with(holder.binding) {
             holder.itemView.tag = user
-            imageView.tag = user
+            notificationView.tag = user
 
             subjectText.text = user.task
             placeText.text = user.deadline
             teacherText.text = user.subject
+            notificationView.isVisible = user.notification
+            subjectView.setBackgroundColor(user.colour)
         }
     }
 

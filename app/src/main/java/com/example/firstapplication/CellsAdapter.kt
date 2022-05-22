@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstapplication.databinding.ItemCellBinding
 import com.example.firstapplication.databinding.ItemUserBinding
@@ -38,7 +39,7 @@ class CellsAdapter(
         val binding = ItemCellBinding.inflate(inflater, parent, false)
 
         binding.root.setOnClickListener(this)
-        binding.imageView.setOnClickListener(this)
+        binding.notificationView.setOnClickListener(this)
 
         return CellsViewHolder(binding)
     }
@@ -49,16 +50,17 @@ class CellsAdapter(
         // при ветвлении в каждой позиции которая затрагивается надо обновлять значение во всех полях
         with(holder.binding) {
             holder.itemView.tag = cell
-            imageView.tag = cell
+            notificationView.tag = cell
 
             subjectText.text = cell.content.get_content_part(0,0)
             placeText.text = cell.content.get_content_part(1,0)
             teacherText.text = cell.content.get_content_part(2,0)
+            objectView.setBackgroundColor(cell.colour)
+            notificationView.isVisible = cell.notification
         }
     }
 
     private fun showPopupMenu(view: View) {
-
         val popupMenu = PopupMenu(view.context, view)
         val context = view.context
         val cell = view.tag as Cell

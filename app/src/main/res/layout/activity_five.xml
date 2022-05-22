@@ -69,6 +69,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#AAAAAA"
@@ -87,7 +88,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="45sp"
                 android:layout_weight="10">
 
                 <TextView
@@ -134,7 +135,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="45sp"
                 android:layout_weight="10">
 
                 <TextView
@@ -181,7 +182,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="45sp"
                 android:layout_weight="10">
 
                 <TextView
@@ -194,20 +195,8 @@
                     android:text="01.01.01 0:00"
                     android:textColor="#121212"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/delDate"
-                    app:layout_constraintStart_toEndOf="@+id/EndDate"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/delDate"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.6"
-                    android:background="@android:drawable/ic_menu_close_clear_cancel"
-                    android:onClick="onClick"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/EndDate"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -229,20 +218,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="45sp"
                 android:layout_weight="10">
-
-                <Button
-                    android:id="@+id/delNotify"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:background="@android:drawable/ic_menu_close_clear_cancel"
-                    android:onClick="onClick"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/Reminder"
@@ -274,7 +251,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#090909"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/delNotify"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Reminder"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -282,7 +259,7 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45sp"
                 android:layout_weight="5"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_vertical"
@@ -303,5 +280,13 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

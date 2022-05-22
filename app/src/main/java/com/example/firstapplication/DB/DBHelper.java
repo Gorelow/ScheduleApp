@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 17; // по нему будет понятно, стоит ли обнавлять бд
+    public static final int DATABASE_VERSION = 18; // по нему будет понятно, стоит ли обнавлять бд
     public static final String DATABASE_NAME = "contactDb";
 
     //region Названия всех таблиц в базе данных
@@ -43,7 +43,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_PLACE = "place";
     public static final String KEY_DEADLINE = "deadline";
     public static final String KEY_TYPE = "type";
-    //public static final String KEY_NOTIFICATION = "notification";
+    public static final String KEY_COLOR = "color";
+    public static final String KEY_NOTIFICATION = "notification";
     //endregion
 
     // region все столбцы в прилложении Columns
@@ -52,6 +53,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final DBTableColumn COLUMN_NAME = new DBTableColumn(KEY_NAME, DBDataType.text);
     public static final DBTableColumn COLUMN_MAIL = new DBTableColumn(KEY_MAIL, DBDataType.text);
 
+    public static final DBTableColumn COLUMN_COLOR = new DBTableColumn(KEY_COLOR, DBDataType.integer);
+    public static final DBTableColumn COLUMN_NOTIFICATION = new DBTableColumn(KEY_NOTIFICATION, DBDataType.integer);
     public static final DBTableColumn COLUMN_START = new DBTableColumn(KEY_START, DBDataType.text);
     public static final DBTableColumn COLUMN_END = new DBTableColumn(KEY_END, DBDataType.text);
     public static final DBTableColumn COLUMN_DAY = new DBTableColumn(KEY_DAY, DBDataType.text);
@@ -89,8 +92,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final DBForeignKey FOREIGN_TASKS_SUBJECTS_KEY_VALUE = new DBForeignKey(COLUMN_SUBJECT, TABLE_DIRECTORY_SUBJECTS, COLUMN_TEXT_VALUE);
     public static final DBForeignKey[] FOREIGN_TASKS_KEYS = new DBForeignKey[] {FOREIGN_TASKS_SUBJECTS_KEY_VALUE};
 
-    public static final DBTable TABLE_SCHEDULE = new DBTable(NAME_TABLE_SCHEDULE, new DBTableColumn[] {COLUMN_ID, COLUMN_DAY, COLUMN_LESSON_TIME, COLUMN_SUBJECT, COLUMN_TYPE, COLUMN_TEACHER, COLUMN_PLACE}, FOREIGN_SCHEDULE_KEYS);
-    public static final DBTable TABLE_TASKS = new DBTable(NAME_TABLE_TASKS, new DBTableColumn[] {COLUMN_ID, COLUMN_NAME, COLUMN_SUBJECT, COLUMN_DEADLINE}, FOREIGN_TASKS_KEYS);
+    public static final DBTable TABLE_SCHEDULE = new DBTable(NAME_TABLE_SCHEDULE, new DBTableColumn[] {COLUMN_ID, COLUMN_DAY, COLUMN_LESSON_TIME, COLUMN_SUBJECT, COLUMN_TYPE, COLUMN_TEACHER, COLUMN_PLACE, COLUMN_COLOR}, FOREIGN_SCHEDULE_KEYS);
+    public static final DBTable TABLE_TASKS = new DBTable(NAME_TABLE_TASKS, new DBTableColumn[] {COLUMN_ID, COLUMN_NAME, COLUMN_SUBJECT, COLUMN_DEADLINE, COLUMN_COLOR}, FOREIGN_TASKS_KEYS);
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -28,8 +28,8 @@ public class CellContent {
     public void set_content(String[][] content)
     {
         if (content == null) return;
-        int rowsAmount = content.length;
-        int columnsAmount = content[0].length;
+        int columnsAmount = content.length;
+        int rowsAmount = content[0].length;
         if ((rowsAmount > MAX_COLUMNS_IN_A_CELL) || ((columnsAmount > MAX_ROWS_IN_A_CELL))) return;
 
         _rowsAmount = (byte) rowsAmount;
