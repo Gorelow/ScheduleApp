@@ -4,7 +4,7 @@ typealias ColourListener = (colour : List<Colour>) -> Unit
 
 class ColourService {
     private var MaxColorValue = 255
-    private var StepAmount = 4
+    private var StepAmount = 3
     private var ColorStepValue = MaxColorValue / (StepAmount - 1)
 
     private var colours = mutableListOf<Colour>()
@@ -14,9 +14,9 @@ class ColourService {
     init {
         colours = (0.. StepAmount * StepAmount * StepAmount).map { Colour(
             id = it.toLong(),
-            green = 0 + ColorStepValue * (it % StepAmount),
-            red = (it / StepAmount) % StepAmount,
-            blue = it / (StepAmount * StepAmount)
+            green = ColorStepValue * (it % StepAmount),
+            red = ColorStepValue * ((it / StepAmount) % StepAmount),
+            blue = ColorStepValue * (it / (StepAmount * StepAmount))
         ) }.toMutableList()
     }
 

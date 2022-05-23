@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 18; // по нему будет понятно, стоит ли обнавлять бд
+    public static final int DATABASE_VERSION = 19; // по нему будет понятно, стоит ли обнавлять бд
     public static final String DATABASE_NAME = "contactDb";
 
     //region Названия всех таблиц в базе данных
@@ -92,8 +92,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final DBForeignKey FOREIGN_TASKS_SUBJECTS_KEY_VALUE = new DBForeignKey(COLUMN_SUBJECT, TABLE_DIRECTORY_SUBJECTS, COLUMN_TEXT_VALUE);
     public static final DBForeignKey[] FOREIGN_TASKS_KEYS = new DBForeignKey[] {FOREIGN_TASKS_SUBJECTS_KEY_VALUE};
 
-    public static final DBTable TABLE_SCHEDULE = new DBTable(NAME_TABLE_SCHEDULE, new DBTableColumn[] {COLUMN_ID, COLUMN_DAY, COLUMN_LESSON_TIME, COLUMN_SUBJECT, COLUMN_TYPE, COLUMN_TEACHER, COLUMN_PLACE, COLUMN_COLOR}, FOREIGN_SCHEDULE_KEYS);
-    public static final DBTable TABLE_TASKS = new DBTable(NAME_TABLE_TASKS, new DBTableColumn[] {COLUMN_ID, COLUMN_NAME, COLUMN_SUBJECT, COLUMN_DEADLINE, COLUMN_COLOR}, FOREIGN_TASKS_KEYS);
+    public static final DBTable TABLE_SCHEDULE = new DBTable(NAME_TABLE_SCHEDULE, new DBTableColumn[] {COLUMN_ID, COLUMN_DAY, COLUMN_LESSON_TIME, COLUMN_SUBJECT, COLUMN_TYPE, COLUMN_TEACHER, COLUMN_PLACE, COLUMN_COLOR, COLUMN_NOTIFICATION}, FOREIGN_SCHEDULE_KEYS);
+    public static final DBTable TABLE_TASKS = new DBTable(NAME_TABLE_TASKS, new DBTableColumn[] {COLUMN_ID, COLUMN_NAME, COLUMN_SUBJECT, COLUMN_DEADLINE, COLUMN_COLOR, COLUMN_NOTIFICATION}, FOREIGN_TASKS_KEYS);
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -49,7 +49,6 @@ class ActivityThree : AppCompatActivity() {
                 // надо это подготовить для баазы данных, но пока этого нет
                 pickedColour = android.graphics.Color.argb(255,colour.red, colour.green, colour.blue)
                 findViewById<View>(R.id.colors).setBackgroundColor(pickedColour)
-                TODO("Not yet implemented")
             }
         })
 

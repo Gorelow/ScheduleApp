@@ -10,7 +10,12 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.firstapplication.DB.DBHelper
+import com.example.firstapplication.databinding.ActivityFiveBinding
+import com.example.firstapplication.databinding.ActivityThreeBinding
+import com.example.firstapplication.model.ColourListener
+import com.example.firstapplication.model.ColourService
 import java.util.*
 
 class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
@@ -23,6 +28,9 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
         @kotlin.jvm.JvmField
         var num: Int = -1
     }
+
+    private lateinit var binding: ActivityFiveBinding
+    private lateinit var adapter: ColourAdapter
 
     public var updateData = false
 
@@ -44,9 +52,19 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
     var savedMinute = 0
     //comd+shift
 
+    private val colourService: ColourService
+        get() = (applicationContext as App).colourService
+
+    private val colourListener : ColourListener = {
+        adapter.colours = it
+    }
+
+    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_five)
+        binding = ActivityFiveBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         try {
             mTextView = findViewById<View>(R.id.inputTask) as TextView
         }  catch (e : Exception) {
@@ -71,6 +89,13 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
         if (num >= 0) fill()
 
         pickDate()
+
+        val layoutManager = GridLayoutManager(this,6)
+        binding.recyclerView.layoutManager = layoutManager
+        binding.recyclerView.adapter = adapter
+
+
+        colourService.addListener(colourListener)
     }
 
     private fun getDateTimeCalendar() {
@@ -128,7 +153,7 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
             val deadlineIndex = cursor.getColumnIndex(DBHelper.KEY_DEADLINE)
             val subjectIndex = cursor.getColumnIndex(DBHelper.KEY_SUBJECT)
             firstName = cursor.getString(taskIndex)
-            etName!!.setText(cursor.getString(taskIndex))
+            etName.setText(cursor.getString(taskIndex))
             etSubject.setText(cursor.getString(subjectIndex))
             etDeadline.setText(cursor.getString(deadlineIndex))
             updateData = true
@@ -165,6 +190,8 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
                 contentValues1.put(DBHelper.KEY_SUBJECT, subject)
                 contentValues1.put(DBHelper.KEY_NAME, name)
                 contentValues1.put(DBHelper.KEY_DEADLINE, deadline)
+                contentValues1.put(DBHelper.KEY_COLOR, 0)
+                contentValues1.put(DBHelper.KEY_NOTIFICATION, 0)
                 if (updateData) database.delete(
                     DBHelper.NAME_TABLE_TASKS,
                     DBHelper.KEY_NAME + "= '" + firstName + "'",
