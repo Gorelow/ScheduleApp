@@ -178,28 +178,42 @@ class ActivityThree : AppCompatActivity() {
                 val directories = arrayOf<String>(DBHelper.TABLE_SUBJECTS, DBHelper.NAME_TABLE_TYPES, DBHelper.TABLE_PLACES, DBHelper.TABLE_TEACHERS)
                 val keys = arrayOf<String>(DBHelper.KEY_SUBJECT, DBHelper.KEY_TYPE, DBHelper.KEY_PLACE, DBHelper.KEY_TEACHER, DBHelper.KEY_DAY)
 
-                // сначала записать данные в отдельные таблицы, затем в одну большую
-                for (i in 0..3) {
-                    putDataInDirectory(database,  directories[i], editTexts[i])
-                }
+                try {
+                    // сначала записать данные в отдельные таблицы, затем в одну большую
+                    for (i in 0..3) {
+                        putDataInDirectory(database, directories[i], editTexts[i])
+                    }
+                    //COLUMN_ID, COLUMN_DAY, COLUMN_LESSON_TIME, COLUMN_SUBJECT, COLUMN_TYPE, COLUMN_TEACHER, COLUMN_PLACE, COLUMN_COLOR, COLUMN_NOTIFICATION
 
-                fillContentValues(contentValues,keys,editTexts)
-                contentValues.put(DBHelper.KEY_LESSON_TIME, timeStampPiked)
-                contentValues.put(DBHelper.KEY_NOTIFICATION, 0)
-                contentValues.put(DBHelper.KEY_COLOR, pickedColour)
-                if (updateData) database.update(
-                    DBHelper.NAME_TABLE_SCHEDULE,
-                    contentValues,
-                    DBHelper.KEY_LESSON_TIME + "= " + timeStampPiked + " AND " + DBHelper.KEY_DAY + "= " + etDay.text.toString(),
-                    null
-                ) else database.insert(DBHelper.NAME_TABLE_SCHEDULE, null, contentValues)
-                dbHelper.close()
-                intent = Intent(this, ActivityTwo::class.java)
-                startActivity(intent)
+                    for (i in 0 until keys.count()) {
+                        contentValues.put(keys[i], editTexts[i].text.toString())
+                    }
+                    //fillContentValues(contentValues,keys,editTexts)
+                    contentValues.put(DBHelper.KEY_LESSON_TIME, timeStampPiked)
+                    contentValues.put(DBHelper.KEY_NOTIFICATION, 0)
+                    contentValues.put(DBHelper.KEY_COLOR, pickedColour)
+                    try {
+                        if (updateData) database.update(
+                            DBHelper.NAME_TABLE_SCHEDULE,
+                            contentValues,
+                            DBHelper.KEY_LESSON_TIME + "= " + timeStampPiked + " AND " + DBHelper.KEY_DAY + "= " + etDay.text.toString(),
+                            null
+                        ) else database.insert(DBHelper.NAME_TABLE_SCHEDULE, null, contentValues)
+                        dbHelper.close()
+                        intent = Intent(this, ActivityTwo::class.java)
+                        startActivity(intent)
+                    } catch (e: Exception) {
+                        Toast.makeText(this, "database insertion problem", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: Exception) {
+                    Toast.makeText(this, "content value input problem", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                }
             }
             R.id.delDay, R.id.delEndTime, R.id.delPlace, R.id.delStartTime, R.id.delSubject2, R.id.delTeacher, R.id.delType -> {
                 mTextView = findViewById<View>(v.id) as TextView
-                mTextView!!.text = ""
+                mTextView.text = ""
             }
             R.id.del_input_button -> {
                 try {

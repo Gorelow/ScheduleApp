@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.firstapplication.DB.DBHelper
 import com.example.firstapplication.databinding.ActivityFiveBinding
 import com.example.firstapplication.databinding.ActivityThreeBinding
+import com.example.firstapplication.model.Colour
 import com.example.firstapplication.model.ColourListener
 import com.example.firstapplication.model.ColourService
 import java.util.*
@@ -27,6 +28,7 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
     companion object {
         @kotlin.jvm.JvmField
         var num: Int = -1
+        var pickedColour = 0
     }
 
     private lateinit var binding: ActivityFiveBinding
@@ -65,6 +67,14 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
         binding = ActivityFiveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        adapter = ColourAdapter(object :  ColourActionListener{
+            override fun OnPick(colour: Colour) {
+                // надо это подготовить для баазы данных, но пока этого нет
+                pickedColour = android.graphics.Color.argb(255,colour.red, colour.green, colour.blue)
+                findViewById<View>(R.id.recyclerView).setBackgroundColor(ActivityFive.pickedColour)
+            }
+        })
+
         try {
             mTextView = findViewById<View>(R.id.inputTask) as TextView
         }  catch (e : Exception) {
@@ -86,9 +96,17 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
             Toast.makeText(this@ActivityFive, "problem with etName", Toast.LENGTH_SHORT).show()
         }
 
-        if (num >= 0) fill()
+        try {
+            if (num >= 0) fill()
+        } catch (e: Exception) {
+            Toast.makeText(this@ActivityFive, "fill error ${e.message}", Toast.LENGTH_SHORT).show()
+        }
 
-        pickDate()
+        try {
+            pickDate()
+        } catch (e: Exception) {
+            Toast.makeText(this@ActivityFive, "pickDate error ${e.message}", Toast.LENGTH_SHORT).show()
+        }
 
         val layoutManager = GridLayoutManager(this,6)
         binding.recyclerView.layoutManager = layoutManager
@@ -190,8 +208,8 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
                 contentValues1.put(DBHelper.KEY_SUBJECT, subject)
                 contentValues1.put(DBHelper.KEY_NAME, name)
                 contentValues1.put(DBHelper.KEY_DEADLINE, deadline)
-                contentValues1.put(DBHelper.KEY_COLOR, 0)
-                contentValues1.put(DBHelper.KEY_NOTIFICATION, 0)
+                contentValues1.put(DBHelper.KEY_COLOR, pickedColour)
+                contentValues1.put(DBHelper.KEY_NOTIFICATION, 1)
                 if (updateData) database.delete(
                     DBHelper.NAME_TABLE_TASKS,
                     DBHelper.KEY_NAME + "= '" + firstName + "'",
@@ -222,7 +240,6 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
             }
         }
     }
-
 
 
 }

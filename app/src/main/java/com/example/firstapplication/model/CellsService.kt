@@ -57,6 +57,8 @@ class CellsService {
     fun changeCell(index: Int, newCell: Cell) {
         val indexToChange = cells.indexOfFirst { it.id == newCell.id }
         cells[indexToChange].content._content = newCell.content._content
+        cells[indexToChange].notification = newCell.notification
+        cells[indexToChange].colour = newCell.colour
         notifyChanges()
     }
 

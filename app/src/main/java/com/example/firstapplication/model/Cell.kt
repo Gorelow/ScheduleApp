@@ -10,6 +10,6 @@ data class Cell (
     val day: Day,
     val timeFrame: Int,
     val content: CellContent,
-    val colour: Int,
-    val notification: Boolean
+    var colour: Int,
+    var notification: Boolean
 )
