@@ -24,6 +24,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TABLE_TEACHERS = "teachers";
     public static final String TABLE_PLACES = "places";
     public static final String TABLE_DAYS = "days";
+    public static final String NAME_TABLE_ACCOUNTS = "accounts";
     //endregion
 
     //endregion
@@ -45,6 +46,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_TYPE = "type";
     public static final String KEY_COLOR = "color";
     public static final String KEY_NOTIFICATION = "notification";
+    public static final String KEY_PASSWORD = "password";
+    public static final String KEY_LAST_USED = "lastUsed";
     //endregion
 
     // region все столбцы в прилложении Columns
@@ -53,6 +56,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final DBTableColumn COLUMN_NAME = new DBTableColumn(KEY_NAME, DBDataType.text);
     public static final DBTableColumn COLUMN_MAIL = new DBTableColumn(KEY_MAIL, DBDataType.text);
 
+    public static final DBTableColumn COLUMN_PASSWORD = new DBTableColumn(KEY_PASSWORD, DBDataType.text);
+    public static final DBTableColumn COLUMN_LAST_USED = new DBTableColumn(KEY_LAST_USED, DBDataType.text);
     public static final DBTableColumn COLUMN_COLOR = new DBTableColumn(KEY_COLOR, DBDataType.integer);
     public static final DBTableColumn COLUMN_NOTIFICATION = new DBTableColumn(KEY_NOTIFICATION, DBDataType.integer);
     public static final DBTableColumn COLUMN_START = new DBTableColumn(KEY_START, DBDataType.text);
@@ -81,6 +86,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final DBTable TABLE_TIMESTAMPS = new DBTable(NAME_TABLE_TIMESTAMPS, new DBTableColumn[] {COLUMN_ID, COLUMN_START, COLUMN_END});
     public static final DBTable TABLE_CONSTANTS = new DBTable(NAME_TABLE_CONSTANTS, new DBTableColumn[] {COLUMN_ID, COLUMN_NAME, COLUMN_MAIL});
+    public static final DBTable TABLE_ACCOUNTS = new DBTable(NAME_TABLE_ACCOUNTS, new DBTableColumn[] {COLUMN_ID, COLUMN_MAIL, COLUMN_PASSWORD, COLUMN_LAST_USED});
 
     public static final DBForeignKey FOREIGN_SCHEDULE_TIMESTAMPS_KEY_ID = new DBForeignKey(COLUMN_LESSON_TIME, TABLE_TIMESTAMPS, COLUMN_ID);
     public static final DBForeignKey FOREIGN_SCHEDULE_SUBJECTS_KEY_VALUE = new DBForeignKey(COLUMN_SUBJECT, TABLE_DIRECTORY_SUBJECTS, COLUMN_TEXT_VALUE);
@@ -107,6 +113,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         createTable(db, TABLE_TIMESTAMPS);
         createTable(db, TABLE_CONSTANTS);
+        createTable(db, TABLE_ACCOUNTS);
         createTable(db, TABLE_SCHEDULE);
         createTable(db, TABLE_TASKS);
     }
@@ -126,6 +133,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists " + NAME_TABLE_TASKS);
         db.execSQL("drop table if exists " + NAME_TABLE_TYPES);
         db.execSQL("drop table if exists " + TABLE_DAYS);
+        db.execSQL("drop table if exists " + NAME_TABLE_ACCOUNTS);
 
 
         db.execSQL("drop table if exists " + NAME_TABLE_CONSTANTS);

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BFBFBF">
+    android:background="#878787"
+    tools:context= ".ui.login.LoginActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/welcomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-light"
         android:text="Welcome!"
         android:textColor="#050505"
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/username"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -31,10 +32,10 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTitle" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -43,32 +44,32 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordTitle" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/nameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:text="Name"
         android:textColor="#050505"
         android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTitle" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/passwordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Password"
         android:textColor="#050505"
         android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/registerButton"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
@@ -81,16 +82,25 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/loginButton"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#2C2C2C"
+        android:background="#121212"
         android:fontFamily="sans-serif-light"
         android:text="Sign in"
         android:textColor="#FAFAFA"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Remember me"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 </androidx.constraintlayout.widget.ConstraintLayout>

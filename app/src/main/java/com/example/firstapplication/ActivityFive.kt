@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.firstapplication.DB.DBHelper
 import com.example.firstapplication.databinding.ActivityFiveBinding
-import com.example.firstapplication.databinding.ActivityThreeBinding
 import com.example.firstapplication.model.Colour
 import com.example.firstapplication.model.ColourListener
 import com.example.firstapplication.model.ColourService
@@ -29,6 +28,7 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
         @kotlin.jvm.JvmField
         var num: Int = -1
         var pickedColour = 0
+        var notification = 0
     }
 
     private lateinit var binding: ActivityFiveBinding
@@ -40,6 +40,8 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
     lateinit var etDeadline : TextView
 
     private var firstName = ""
+
+    private val notificationStringValues =  arrayOf("нет", "да")
 
     var day = 0
     var month = 0
@@ -170,10 +172,13 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
             val taskIndex = cursor.getColumnIndex(DBHelper.KEY_NAME)
             val deadlineIndex = cursor.getColumnIndex(DBHelper.KEY_DEADLINE)
             val subjectIndex = cursor.getColumnIndex(DBHelper.KEY_SUBJECT)
+            val notificationIndex = cursor.getColumnIndex(DBHelper.KEY_NOTIFICATION)
             firstName = cursor.getString(taskIndex)
             etName.setText(cursor.getString(taskIndex))
             etSubject.setText(cursor.getString(subjectIndex))
             etDeadline.setText(cursor.getString(deadlineIndex))
+            notification = cursor.getInt(notificationIndex)
+            (findViewById<View>(R.id.TextReminder) as TextView).setText(notificationStringValues[notification])
             updateData = true
             findViewById<View>(R.id.button).visibility = View.VISIBLE
         } else Log.d("mLog", "0 rows")
@@ -223,6 +228,10 @@ class ActivityFive : AppCompatActivity(), DatePickerDialog.OnDateSetListener, Ti
             R.id.delTask, R.id.delSubject -> {
                 mTextView = v as TextView
                 mTextView.text = ""
+            }
+            R.id.TextReminder -> {
+                notification = 1 - notification
+                (findViewById<View>(R.id.TextReminder) as TextView).setText(notificationStringValues[notification])
             }
             R.id.button -> {
                 database.delete(
