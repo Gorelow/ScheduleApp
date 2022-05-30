@@ -10,6 +10,7 @@ import android.widget.ProgressBar
 import com.example.firstapplication.ui.login.LoginFormState
 import com.example.firstapplication.ui.login.LoginResult
 import android.app.Activity
+import android.content.Intent
 import android.text.TextWatcher
 import android.text.Editable
 import android.view.View
@@ -21,6 +22,8 @@ import com.example.firstapplication.R
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
+import com.example.firstapplication.ActivityUserAccount
+import com.example.firstapplication.MainActivity
 import com.example.firstapplication.databinding.ActivitySignInBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -102,7 +105,8 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: LoggedInUserView?) {
         val welcome = getString(R.string.welcome) + model!!.displayName
         // TODO : initiate successful logged in experience
-
+        intent = Intent(this, ActivityUserAccount::class.java)
+        startActivity(intent)
         Toast.makeText(applicationContext, welcome, Toast.LENGTH_LONG).show()
     }
 

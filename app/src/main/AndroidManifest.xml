@@ -10,6 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ActivityPickWorker"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityPickSubject"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityPickGroup"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySubscribeToGroup"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySubjectInOrganisation"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityGroupInOrganisation"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityWorkerInOrganisation"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityWorker"
+            android:exported="false" />
+        <activity
             android:name=".ActivityUserAccount"
             android:exported="false" />
         <activity

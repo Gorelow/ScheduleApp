@@ -18,6 +18,8 @@ import com.example.firstapplication.DB.DBHelper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static int UserType = -1;
+
     TextView textView;
     Button button1;
     Button button2;
@@ -25,9 +27,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     DBHelper dbHelper = new DBHelper(this);
     EditText etName, etEmail;
 
+    static String[][] OptionValues = new String[][] {
+            new String[]{"Расписание","Задание","Подписаться на группу"},
+            new String[]{"Расписание","Задание","Изменить группу"},
+            new String[]{"Преподаватели","Занятия","Группы"}};
 
-
-
+    static Class[][] OptionActivities= new Class[][] {
+            new Class[]{ActivityTwo.class,ActivityFour.class/*, НУЖЕН КЛАСС ДЛЯ ГРУПП*/},
+            new Class[]{ActivityTwo.class,ActivityFour.class /*,"НУЖЕН КЛАСС ДЛЯ ГРУПП"*/},
+            new Class[]{/*НУЖЕН КЛАСС ДЛЯ УЧИТЕЛЕЙ*//*,"НУЖЕН КЛАСС ДЛЯ ПРЕДМЕТОВ"*//*,"НУЖЕН КЛАСС ДЛЯ ГРУПП"*/}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +43,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         textView = (TextView) findViewById(R.id.textView);
-        button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-
+        button1 = (Button) findViewById(R.id.option1);
+        button2 = (Button) findViewById(R.id.option2);
         dbHelper = new DBHelper(this);
 
         checkOnEmpty();
-
+        setOptionNames();
 
 
         dbHelper.close();
     }
 
-
+    public void setOptionNames(){
+        ((Button) findViewById(R.id.option1)).setText(OptionValues[UserType][0]);
+        ((Button) findViewById(R.id.option2)).setText(OptionValues[UserType][1]);
+        ((Button) findViewById(R.id.option3)).setText(OptionValues[UserType][2]);
+    }
 
 
     public void checkOnEmpty() {
@@ -114,14 +125,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent;
 
         switch (v.getId())   {
-            case R.id.button1:
-                intent = new Intent(this,ActivityTwo.class);
+            case R.id.option1:
+                intent = new Intent(this, OptionActivities[UserType][0]);
                 startActivity(intent);
                 break;
 
-            case R.id.button2:
+            case R.id.option2:
                 try {
-                    intent = new Intent(this, ActivityFour.class);
+                    intent = new Intent(this, OptionActivities[UserType][1]);
+                    startActivity(intent);
+                }
+                catch (Exception e) {
+                    Toast.makeText(this, "start doesn't work", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.option3:
+                try {
+                    intent = new Intent(this, OptionActivities[UserType][2]);
                     startActivity(intent);
                 }
                 catch (Exception e) {

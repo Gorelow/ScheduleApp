@@ -24,14 +24,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/option1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
         android:background="#D6D6D6"
         android:fontFamily="sans-serif-light"
         android:onClick="onClick"
-        android:text="Расписание"
+        android:text="@string/OptionOneName"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintDimensionRatio="w,1:7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,48 +39,63 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/option2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:background="#B5B5B5"
+        android:background="#D6D6D6"
         android:fontFamily="sans-serif-light"
         android:onClick="onClick"
-        android:text="Задания"
+        android:text="@string/OptionTwoName"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintDimensionRatio="w,1:7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintTop_toBottomOf="@+id/option1" />
+
+    <Button
+        android:id="@+id/option3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="#D6D6D6"
+        android:fontFamily="sans-serif-light"
+        android:onClick="onClick"
+        android:text="@string/OptionThreeName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintDimensionRatio="w,1:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option2" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#B5B5B5"
         android:fontFamily="sans-serif-light"
         android:onClick="onClick"
         android:text="Язык - Русский"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="w,1:7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#B5B5B5"
         android:fontFamily="sans-serif-light"
         android:onClick="onClick"
         android:text="Стиль - Темный"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintDimensionRatio="w,1:7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
