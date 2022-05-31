@@ -11,6 +11,7 @@
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_group_in_organisation.xml" value="0.2296875" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_pick_group.xml" value="0.3729166666666667" />
+        <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_pick_item.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_pick_subject.xml" value="0.3729166666666667" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_pick_worker.xml" value="0.3808876811594203" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/activity_registration.xml" value="0.379981884057971" />
@@ -32,6 +33,7 @@
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_group.xml" value="0.24270833333333333" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_subject.xml" value="0.25" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_timestamp.xml" value="0.379981884057971" />
+        <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_universal.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_user.xml" value="0.5" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/item_worker.xml" value="0.33" />
         <entry key="..\:/Users/Anton/Desktop/FirstApplication/app/src/main/res/layout/list_item.xml" value="0.2667572463768116" />

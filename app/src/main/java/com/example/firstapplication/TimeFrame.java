@@ -24,6 +24,10 @@ public class TimeFrame {
         set_start_and_end(start_minute, end_minute);
     }
 
+    public TimeFrame(TimeFrame timeFrame) {
+        set_start_and_end(timeFrame._start.get_time(), timeFrame._end.get_time());
+    }
+
     // region Basic Get and Set for start and end
     public TimeHourAndMinute get_start() {
         return new TimeHourAndMinute(this._start);
@@ -37,6 +41,11 @@ public class TimeFrame {
     public void set_start_and_end(TimeHourAndMinute start, TimeHourAndMinute end) {
         set_start(start);
         set_end(end);
+    }
+
+    public void set_start_and_end(TimeFrame timeFrame) {
+        set_start(timeFrame.get_start());
+        set_end(timeFrame.get_end());
     }
 
     public void set_start(TimeHourAndMinute time) {
